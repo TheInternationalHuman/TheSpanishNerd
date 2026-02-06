@@ -7,7 +7,14 @@
     <!-- SEO Meta Tags -->
     <title>The Spanish Nerd | A System for Disciplined Mastery</title>
     <meta name="description" content="The Spanish Nerd is a high-efficiency Hybrid Workbook System for disciplined learners. Master Spanish through structure, active recall, and cognitive efficiency.">
+    <meta name="keywords" content="learn spanish, spanish workbook, spanish mastery, active recall spanish, intensive spanish system">
     <link rel="canonical" href="https://thespanishnerd.com">
+    
+    <!-- Social Media Meta Tags (Open Graph) -->
+    <meta property="og:title" content="The Spanish Nerd | A System for Disciplined Mastery">
+    <meta property="og:description" content="Stop playing games. Start mastering Spanish with a structural system designed for serious learners.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://thespanishnerd.com">
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -34,6 +41,20 @@
             letter-spacing: -0.01em;
         }
 
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--color-ink);
+            color: white;
+            padding: 8px;
+            z-index: 100;
+            transition: top 0.3s;
+        }
+        .skip-link:focus {
+            top: 0;
+        }
+
         .video-container {
             aspect-ratio: 16 / 9;
             background: #000;
@@ -56,9 +77,22 @@
             cursor: pointer;
         }
 
-        .btn-primary:hover {
+        .btn-primary:hover, .btn-primary:focus {
             background-color: transparent;
             color: var(--color-ink);
+            outline: 2px solid var(--color-ink);
+            outline-offset: 2px;
+        }
+
+        .pricing-card {
+            border: 1px solid #E5E1D8;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background: #fff;
+        }
+
+        .pricing-card.featured {
+            border-color: var(--color-accent);
+            box-shadow: 0 10px 30px rgba(139, 110, 55, 0.15);
         }
 
         .type-tag {
@@ -75,67 +109,26 @@
             padding: 6rem 1.5rem;
         }
 
-        /* Hero Image Bundle Styling */
-        .bundle-visual {
-            position: relative;
-            height: 500px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            perspective: 1200px;
-        }
-
-        .bundle-img {
-            position: absolute;
-            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-            box-shadow: 0 30px 60px rgba(0,0,0,0.12);
-            border-radius: 8px;
-            object-fit: cover;
-        }
-
-        /* Left: Video Dashboard Floating Back */
-        .img-secondary-left {
-            width: 50%;
-            z-index: 10;
-            transform: translateX(-55%) translateZ(-80px) rotateY(20deg);
-            filter: brightness(0.9);
-        }
-
-        /* Right: App Interface Floating Back */
-        .img-secondary-right {
-            width: 45%;
-            z-index: 10;
-            transform: translateX(65%) translateZ(-80px) rotateY(-20deg);
-            filter: brightness(0.9);
-        }
-
-        /* Center: The Pink Workbook (Focal Point) */
-        .img-main-pink {
-            width: 60%;
-            z-index: 20;
-            transform: translateZ(20px);
-            box-shadow: 0 40px 80px rgba(0,0,0,0.25);
-            border: 1px solid rgba(0,0,0,0.05);
-        }
-
-        @media (max-width: 768px) {
-            .bundle-visual { height: 350px; }
-            .img-secondary-left { width: 55%; transform: translateX(-40%) scale(0.85); }
-            .img-secondary-right { width: 50%; transform: translateX(50%) scale(0.85); }
-            .img-main-pink { width: 70%; }
+        .pillar-line {
+            width: 1px;
+            height: 40px;
+            background: var(--color-accent);
+            margin: 0 auto;
+            opacity: 0.3;
         }
     </style>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <!-- Navigation -->
-    <nav class="sticky top-0 z-50 bg-[#F9F7F2]/90 backdrop-blur-md border-b border-neutral-200">
+    <nav class="sticky top-0 z-50 bg-[#F9F7F2]/90 backdrop-blur-md border-b border-neutral-200" aria-label="Main Navigation">
         <div class="flex justify-between items-center px-8 py-6 max-w-7xl mx-auto">
             <div class="text-xl font-bold tracking-tighter serif italic">The Spanish Nerd.</div>
             <div class="hidden md:flex gap-8 text-xs uppercase tracking-widest font-semibold text-muted">
-                <a href="#method" class="hover:text-black transition">The Method</a>
-                <a href="#system" class="hover:text-black transition">The System</a>
-                <a href="#pricing" class="hover:text-black transition">Invest</a>
+                <a href="#method" class="hover:text-black transition focus:outline-black">The Method</a>
+                <a href="#system" class="hover:text-black transition focus:outline-black">The System</a>
+                <a href="#pricing" class="hover:text-black transition focus:outline-black">Invest</a>
             </div>
         </div>
     </nav>
@@ -157,21 +150,18 @@
             </div>
             
             <div class="relative">
-                <!-- Visual Bundle Representation -->
-                <div class="bundle-visual">
-                    <!-- Updated to local paths for GitHub/Namecheap hosting -->
-                    <!-- Videos (Left/Back) -->
-                    <img src="images/video-modules.jpg" alt="Video Modules" class="bundle-img img-secondary-left">
-                    
-                    <!-- App (Right/Back) -->
-                    <img src="images/learning-app.jpg" alt="Learning App" class="bundle-img img-secondary-right">
-                    
-                    <!-- Pink Workbook (Focal Point) -->
-                    <img src="images/pink-workbook.jpg" alt="The Master Workbook" class="bundle-img img-main-pink">
+                <div class="video-container">
+                    <iframe 
+                        class="w-full h-full"
+                        src="https://www.youtube.com/embed/gsDjnBRbyGc" 
+                        title="The Spanish Nerd Method Overview" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        allowfullscreen>
+                    </iframe>
                 </div>
-                
-                <div class="absolute -bottom-6 -right-6 hidden lg:block bg-white p-6 border border-neutral-100 shadow-xl max-w-xs z-30">
-                    <p class="text-sm italic serif">"The images above represent your complete digital and physical toolkit for fluency."</p>
+                <div class="absolute -bottom-6 -right-6 hidden lg:block bg-white p-6 border border-neutral-100 shadow-xl max-w-xs">
+                    <p class="text-sm italic serif">"If you are looking for a game to pass the time, look elsewhere. If you are looking for a foundation for life, you are home."</p>
                 </div>
             </div>
         </section>
@@ -179,43 +169,205 @@
         <!-- The Method Section -->
         <section id="method" class="bg-white border-y border-neutral-100">
             <div class="max-w-5xl mx-auto">
-                <div class="grid md:grid-cols-2 gap-20 items-center">
+                <div class="grid md:grid-cols-2 gap-20">
                     <div>
                         <span class="type-tag">The Pedagogy</span>
                         <h2 class="text-5xl serif mb-8 leading-tight">The Efficiency <br>of Omission.</h2>
                         <p class="text-neutral-600 leading-relaxed mb-6">
-                            Most language programs are designed to keep you subscribed. They focus on fluff. We focus on the high-leverage 20% of the language.
+                            Most language programs are designed to keep you subscribed. They feed you "fun" vocabulary like animal names and colors because it's easy to memorize and makes you feel successful.
                         </p>
-                        
-                        <div class="video-container mb-8">
-                            <iframe 
-                                class="w-full h-full"
-                                src="https://www.youtube.com/embed/gsDjnBRbyGc" 
-                                title="The Spanish Nerd Method Overview" 
-                                frameborder="0" 
-                                allowfullscreen>
-                            </iframe>
-                        </div>
+                        <p class="text-neutral-600 leading-relaxed mb-6">
+                            <strong>The Spanish Nerd operates differently.</strong> We focus on the high-leverage 20% of the language that accounts for 80% of native conversation. We omit the fluff to make room for structural mastery.
+                        </p>
                     </div>
                     <div class="space-y-10">
                         <div>
                             <h3 class="serif text-2xl mb-3">Structural Synthesis</h3>
-                            <p class="text-sm text-neutral-600 leading-relaxed">Passive listening doesn't build neural pathways. Our system uses targeted pattern-recognition testing to verify you deeply understand the language's DNA.</p>
+                            <p class="text-sm text-neutral-600 leading-relaxed">Passive listening doesn't build neural pathways. Our system uses targeted pattern-recognition testing to verify you deeply understand the language's DNA. We move beyond simple memorization by forcing your brain to synthesize and "pull" complex structures from memory, ensuring you master the logic of Spanish as you're learning to speak it.</p>
+                        </div>
+                        <div>
+                            <h3 class="serif text-2xl mb-3">Logical Sequencing</h3>
+                            <p class="text-sm text-neutral-600 leading-relaxed">We don't teach you the "Present Continuous" until you've mastered the foundational "Present Simple." Every page of the workbook is a prerequisite for the next.</p>
+                        </div>
+                        <div>
+                            <h3 class="serif text-2xl mb-3">Cognitive Load Management</h3>
+                            <p class="text-sm text-neutral-600 leading-relaxed">We strip away colorful mascots and dinging sound effects. We respect your attention. The focus is entirely on the linguistic architecture.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Pricing Section -->
+        <!-- The System Section - REDESIGNED VERTICAL PILLARS -->
+        <section id="system" class="max-w-4xl mx-auto">
+            <div class="text-center mb-12">
+                <span class="type-tag">The Hybrid System Architecture</span>
+                <h2 class="text-5xl serif">Three Pillars of Mastery.</h2>
+                <p class="text-neutral-600 mt-4 max-w-xl mx-auto">These three components work in unison to form our primary <strong>Hybrid System</strong> package.</p>
+            </div>
+
+            <div class="space-y-0">
+                <!-- Pillar 1 -->
+                <div class="p-10 border border-neutral-200 bg-white shadow-sm hover:border-accent/40 transition-colors">
+                    <div class="flex flex-col md:flex-row gap-10 items-start">
+                        <div class="w-12 h-12 bg-neutral-100 flex-shrink-0 flex items-center justify-center">
+                            <span class="serif italic text-xl">01</span>
+                        </div>
+                        <div>
+                            <h3 class="serif text-3xl mb-4">The Master Workbook</h3>
+                            <p class="text-neutral-600 leading-relaxed mb-6">
+                                This is where your daily routine changes your life as you become a Spanish speaker. It includes handwritten drills, syntax mapping, and structural exercises that teach the integral workings of Spanish that other resources lack.
+                            </p>
+                            <div class="flex items-center gap-4">
+                                <span class="text-[10px] uppercase tracking-widest font-bold text-accent px-3 py-1 bg-accent/5 rounded-full">Format: High-Resolution PDF</span>
+                                <span class="text-[10px] uppercase tracking-widest font-bold text-neutral-400">300+ Pages</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pillar-line"></div>
+
+                <!-- Pillar 2 -->
+                <div class="p-10 border border-neutral-200 bg-white shadow-sm hover:border-accent/40 transition-colors">
+                    <div class="flex flex-col md:flex-row gap-10 items-start">
+                        <div class="w-12 h-12 bg-neutral-100 flex-shrink-0 flex items-center justify-center">
+                            <span class="serif italic text-xl">02</span>
+                        </div>
+                        <div>
+                            <h3 class="serif text-3xl mb-4">Instructional Modules</h3>
+                            <p class="text-neutral-600 leading-relaxed mb-6">
+                                23 easy to understand video lessons that guide you through the workbook. No fast talking obnoxious hosts or skits. Just a deep-dive into the "why" behind Spanish grammar, delivered with clinical clarity and academic rigor presented in a way that anyone can understand.
+                            </p>
+                            <div class="flex items-center gap-4">
+                                <span class="text-[10px] uppercase tracking-widest font-bold text-accent px-3 py-1 bg-accent/5 rounded-full">Total Length: 5 Hours</span>
+                                <span class="text-[10px] uppercase tracking-widest font-bold text-neutral-400">23 Lessons</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pillar-line"></div>
+
+                <!-- Pillar 3 -->
+                <div class="p-10 border border-neutral-200 bg-white shadow-sm hover:border-accent/40 transition-colors">
+                    <div class="flex flex-col md:flex-row gap-10 items-start">
+                        <div class="w-12 h-12 bg-neutral-100 flex-shrink-0 flex items-center justify-center">
+                            <span class="serif italic text-xl">03</span>
+                        </div>
+                        <div>
+                            <h3 class="serif text-3xl mb-4">Private Spanish Nerd App</h3>
+                            <p class="text-neutral-600 leading-relaxed mb-6">
+                                Our proprietary Spanish learning structure is presented in an exclusive app for our customers to get additional testing on the concepts learned in The Spanish Nerd workbook. You can use it in our student portal without having to download the app, or you can choose to download the app to any device which takes up very little space compared to heavy apps that you get on the app stores.
+                            </p>
+                            <div class="flex items-center gap-4">
+                                <span class="text-[10px] uppercase tracking-widest font-bold text-accent px-3 py-1 bg-accent/5 rounded-full">Compatibility: All Devices</span>
+                                <span class="text-[10px] uppercase tracking-widest font-bold text-neutral-400">Zero Bloat</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Visual Link to Pricing -->
+            <div class="mt-12 text-center">
+                <div class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-accent animate-pulse">
+                    <span>The complete system is bundled below</span>
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section (Invest) -->
         <section id="pricing" class="bg-zinc-50 border-y border-neutral-200">
-            <div class="max-w-7xl mx-auto text-center">
-                <h2 class="text-5xl serif italic mb-16">The Hybrid System</h2>
-                <div class="max-w-md mx-auto bg-white p-12 border border-accent shadow-2xl relative">
-                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#8B6E37] text-white px-4 py-1 text-[10px] font-bold uppercase tracking-widest">Primary Choice</div>
-                    <h3 class="serif text-3xl mb-2">Full Master Bundle</h3>
-                    <div class="text-5xl font-light my-8">$149</div>
-                    <button onclick="handlePurchase()" class="btn-primary w-full">Buy Now</button>
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-16">
+                    <span class="type-tag">The Decision</span>
+                    <h2 class="text-5xl serif italic">Choose your path to mastery.</h2>
+                    <p class="text-neutral-600 mt-4 max-w-lg mx-auto">This system is for those who are more afraid of wasting time than wasting money. Select the tier that matches your commitment.</p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8 items-stretch">
+                    <!-- Anchor 1 -->
+                    <article class="pricing-card p-10 flex flex-col justify-between border-neutral-300">
+                        <div>
+                            <h3 class="serif text-2xl mb-2">The Immersion</h3>
+                            <p class="text-xs text-neutral-500 uppercase tracking-widest mb-6">Elite 1-on-1 Experience</p>
+                            <div class="text-4xl font-light mb-8">$12,000</div>
+                            <ul class="text-sm text-neutral-600 space-y-4 mb-8" aria-label="Immersion Package Details">
+                                <li>• 4 week intense immersion bootcamp</li>
+                                <li>• 8 hours/day training</li>
+                                <li>• Local accommodations included</li>
+                                <li>• Designed for the ones that need to achieve fluency at a mind blowing speed.</li>
+                            </ul>
+                        </div>
+                        <button onclick="handleInquiry()" class="border-2 border-neutral-800 py-3 text-center text-xs uppercase font-bold tracking-widest bg-white text-neutral-800 hover:bg-neutral-800 hover:text-white transition focus:outline-black" aria-label="Inquire about the Immersion Experience">Inquire for Availability</button>
+                    </article>
+
+                    <!-- Main Offer -->
+                    <article class="pricing-card featured p-10 flex flex-col justify-between relative md:scale-105 shadow-2xl">
+                        <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#8B6E37] text-white px-4 py-1 text-[10px] font-bold uppercase tracking-widest">Primary Choice</div>
+                        <div>
+                            <h3 class="serif text-3xl mb-2">The Hybrid System</h3>
+                            <p class="text-xs text-neutral-500 uppercase tracking-widest mb-6">Complete One-Year Blueprint</p>
+                            <div class="text-5xl font-light mb-8">$149</div>
+                            <div class="bg-accent/5 p-4 mb-8 border-l-2 border-accent">
+                                <p class="text-[10px] uppercase font-bold text-accent tracking-tighter mb-2">Includes the 3-Pillar Infrastructure:</p>
+                                <ul class="text-xs space-y-2 font-medium">
+                                    <li>• The Master Workbook</li>
+                                    <li>• All 23 Video Modules</li>
+                                    <li>• Private Spanish Nerd App Access</li>
+                                </ul>
+                            </div>
+                            <ul class="text-sm space-y-4 mb-8" aria-label="Hybrid System Package Details">
+                                <li class="flex items-center gap-2">
+                                    <svg class="w-4 h-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                    <span>Full Web-App Lifetime Access</span>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <svg class="w-4 h-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                    <span>Future Content Updates Included</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <button onclick="handlePurchase()" class="btn-primary w-full" aria-label="Buy the Hybrid Spanish System now for 149 dollars">Buy Now</button>
+                    </article>
+
+                    <!-- Downgrade -->
+                    <article class="pricing-card p-10 flex flex-col justify-between opacity-90">
+                        <div>
+                            <h3 class="serif text-2xl mb-2">App Only</h3>
+                            <p class="text-xs text-neutral-500 uppercase tracking-widest mb-6">Maintenance Access</p>
+                            <div class="text-4xl font-light mb-8">$19<span class="text-sm">/mo</span></div>
+                            <ul class="text-sm text-neutral-600 space-y-4 mb-8" aria-label="Web App Only Details">
+                                <li>• The Spanish Nerd logic based quizzes</li>
+                                <li>• Smart Practice Algorithm</li>
+                                <li>• Vocabulary Banks</li>
+                                <li>• <strong>No</strong> Master Workbook</li>
+                            </ul>
+                        </div>
+                        <div class="border border-neutral-200 bg-neutral-50 py-3 text-center text-xs uppercase font-bold tracking-widest text-neutral-400 cursor-not-allowed">Product Coming Soon</div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="max-w-4xl mx-auto border-t border-neutral-200">
+            <div class="text-center">
+                <span class="type-tag">Observations</span>
+                <div class="space-y-16 mt-12">
+                    <blockquote class="serif text-2xl italic leading-snug">
+                        "I've been trying to learn Spanish for three years now. I have learned and retained more from day one of The Spanish Nerd than in all of the online courses I've tried these past three years."
+                        <cite class="block text-xs uppercase tracking-widest not-italic font-bold mt-4 text-neutral-500">— Darlene H., Alberta Canada</cite>
+                    </blockquote>
+                    <blockquote class="serif text-xl italic leading-relaxed text-neutral-700">
+                        "Finally! ¡Por fin! A language course that will do as it promises. As teachers/trainers who have taught over a thousand teachers to teach English and other languages in the manner that the brain craves to learn them, we unreservedly recommend this workbook as the means to learn Spanish. Zack’s perfect mix of targeted, relevant vocabulary, a steady, manageable approach to the essential mastering of verb conjugation, and attainable daily goals are the gold standard for learning Spanish. Oh, how we wish we had this workbook back in the day when we were learning Spanish!"
+                        <cite class="block text-xs uppercase tracking-widest not-italic font-bold mt-6 text-neutral-500">
+                            — Jordan & Ruth Stackhouse<br>
+                            <a href="https://www.lexica.world/" target="_blank" rel="noopener" class="underline decoration-accent underline-offset-4 hover:text-black transition">Lexica Training Institute</a>
+                        </cite>
+                    </blockquote>
                 </div>
             </div>
         </section>
@@ -223,26 +375,84 @@
 
     <!-- Footer -->
     <footer class="bg-zinc-900 text-white py-20 px-8">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-12">
             <div>
                 <div class="text-3xl serif italic mb-4 text-[#C5A059]">The Spanish Nerd.</div>
+                <p class="text-neutral-400 text-sm max-w-xs">A system built for those who respect the process. Join the ranks of disciplined learners.</p>
             </div>
             <div class="grid grid-cols-2 gap-16">
                 <div>
+                    <h2 class="text-xs uppercase tracking-widest font-bold mb-4">Contact</h2>
+                    <ul class="text-neutral-400 text-sm space-y-2">
+                        <li>nomadteam@protonmail.com</li>
+                    </ul>
+                </div>
+                <div>
                     <h2 class="text-xs uppercase tracking-widest font-bold mb-4">Legal</h2>
                     <ul class="text-neutral-400 text-sm space-y-2">
-                        <li><a href="#" class="hover:text-white transition">Privacy Policy</a></li>
-                        <li><a href="#" class="hover:text-white transition">Terms of Service</a></li>
+                        <li><a href="privacy.html" class="hover:text-white transition">Privacy</a></li>
+                        <li><a href="terms.html" class="hover:text-white transition">Terms of Service</a></li>
                     </ul>
                 </div>
             </div>
+        </div>
+        <div class="max-w-7xl mx-auto border-t border-neutral-800 mt-16 pt-8 text-neutral-500 text-[10px] uppercase tracking-widest text-center md:text-left">
+            © 2026 The Spanish Nerd. All Rights Reserved. Not for everyone.
         </div>
     </footer>
 
     <script>
         const PURCHASE_LINK = "https://thespanishnerd.com/buy?s=1&cart_links%5B%5D=iXuj3&qty%5BiXuj3%5D=1";
+        const CONCIERGE_EMAIL = "nomadteam@protonmail.com";
+
         function handlePurchase() {
-            window.location.href = PURCHASE_LINK;
+            createModal(
+                "Confirming Commitment",
+                "You are about to acquire a high-intensity curriculum. Before proceeding to checkout, acknowledge that this system requires 20 minutes of focused daily discipline.",
+                "I am Ready",
+                () => { window.location.href = PURCHASE_LINK; }
+            );
+        }
+
+        function handleInquiry() {
+            const subject = encodeURIComponent("Inquiry: Elite Immersion Program ($12k)");
+            const body = encodeURIComponent("Hello,\n\nI am interested in the Elite Immersion Program. Please send over current availability for the upcoming season.\n\nDesired City (Medellín/Madrid):\nPreferred Month:\nMy current Spanish Level:");
+            
+            createModal(
+                "Elite Immersion Inquiry",
+                "Due to the highly personalized nature of our 1-on-1 programs, we process applications via direct concierge correspondence.",
+                "Open Email Client",
+                () => { window.location.href = `mailto:${CONCIERGE_EMAIL}?subject=${subject}&body=${body}`; }
+            );
+        }
+
+        function createModal(title, text, buttonText, onConfirm) {
+            const overlay = document.createElement('div');
+            overlay.className = "fixed inset-0 bg-black/80 z-[999] transition-opacity";
+            
+            const modal = document.createElement('div');
+            modal.className = "fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white p-8 md:p-12 shadow-2xl z-[1000] w-[90vw] max-w-[500px] text-center border-t-4 border-accent";
+            
+            modal.innerHTML = `
+                <h2 class="serif text-3xl mb-4 font-semibold">${title}</h2>
+                <p class="mb-8 text-neutral-600 leading-relaxed text-sm md:text-base">${text}</p>
+                <div class="flex flex-col gap-4">
+                    <button id="modal-confirm" class="btn-primary w-full py-4">${buttonText}</button>
+                    <button id="modal-cancel" class="text-xs uppercase tracking-widest text-neutral-400 hover:text-black transition p-2">Return to Site</button>
+                </div>
+            `;
+
+            const close = () => { overlay.remove(); modal.remove(); };
+            overlay.onclick = close;
+            
+            document.body.appendChild(overlay);
+            document.body.appendChild(modal);
+
+            document.getElementById('modal-cancel').onclick = close;
+            document.getElementById('modal-confirm').onclick = () => {
+                onConfirm();
+                close();
+            };
         }
     </script>
 </body>
