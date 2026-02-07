@@ -4,13 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- SEO Meta Tags -->
     <title>The Spanish Nerd | A System for Disciplined Mastery</title>
     <meta name="description" content="The Spanish Nerd is a high-efficiency Hybrid Workbook System for disciplined learners. Master Spanish through structure, active recall, and cognitive efficiency.">
     <meta name="keywords" content="learn spanish, spanish workbook, spanish mastery, active recall spanish, intensive spanish system">
     <link rel="canonical" href="https://thespanishnerd.com">
     
-    <!-- Social Media Meta Tags (Open Graph) -->
     <meta property="og:title" content="The Spanish Nerd | A System for Disciplined Mastery">
     <meta property="og:description" content="Stop playing games. Start mastering Spanish with a structural system designed for serious learners.">
     <meta property="og:type" content="website">
@@ -101,38 +99,25 @@
             padding: 6rem 1.5rem;
         }
 
+        /* CLEANED UP IMAGE AREA - No more weird boxes or shadows */
         .product-images-container {
             display: flex;
-            gap: 1.5rem;
             align-items: center;
             justify-content: center;
-            flex-wrap: wrap;
+            width: 100%;
         }
 
-        .product-image {
-            border-radius: 8px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-            transition: transform 0.3s ease;
-        }
-
-        .product-image:hover {
-            transform: translateY(-5px);
-        }
-
-        .product-image.featured {
-            box-shadow: 0 20px 50px rgba(139, 110, 55, 0.3);
-            transform: scale(1.1);
-        }
-
-        .product-image.featured:hover {
-            transform: scale(1.12) translateY(-5px);
+        .product-image-hero {
+            width: 100%;
+            max-width: 550px;
+            height: auto;
+            display: block;
         }
     </style>
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
-    <!-- Navigation -->
     <nav class="sticky top-0 z-50 bg-[#F9F7F2]/90 backdrop-blur-md border-b border-neutral-200" aria-label="Main Navigation">
         <div class="flex justify-between items-center px-8 py-6 max-w-7xl mx-auto">
             <div class="text-xl font-bold tracking-tighter serif italic">The Spanish Nerd.</div>
@@ -144,7 +129,6 @@
     </nav>
 
     <main id="main-content">
-        <!-- Hero Section -->
         <section class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center pt-12">
             <div>
                 <span class="type-tag">For the Disciplined Achiever</span>
@@ -161,14 +145,11 @@
             
             <div class="relative">
                 <div class="product-images-container">
-    <img src="./video screen for the spanish nerd.png" alt="Spanish Nerd Video Lessons" class="product-image" style="max-width: 180px; height: auto;">
-    <img src="./the spanish nerd hybrid workbook.png" alt="The Spanish Nerd Workbook" class="product-image featured" style="max-width: 220px; height: auto;">
-    <img src="./the spanish nerd app.png" alt="Spanish Nerd Exclusive App" class="product-image" style="max-width: 180px; height: auto;">
-</div>
+                    <img src="./spanish-nerd-bundle.png" alt="The Spanish Nerd Complete Learning System" class="product-image-hero">
+                </div>
             </div>
         </section>
 
-        <!-- Pricing Section (Invest) -->
         <section id="pricing" class="bg-zinc-50 border-y border-neutral-200">
             <div class="max-w-7xl mx-auto">
                 <div class="text-center mb-16">
@@ -178,7 +159,6 @@
                 </div>
 
                 <div class="grid md:grid-cols-3 gap-8 items-stretch">
-                    <!-- Anchor 1 -->
                     <article class="pricing-card p-10 flex flex-col justify-between border-neutral-300">
                         <div>
                             <h3 class="serif text-2xl mb-2">Immersion Bootcamp Abroad </h3>
@@ -194,7 +174,6 @@
                         <button onclick="handleInquiry()" class="border-2 border-neutral-800 py-3 text-center text-xs uppercase font-bold tracking-widest bg-white text-neutral-800 hover:bg-neutral-800 hover:text-white transition focus:outline-black" aria-label="Inquire about the Immersion Experience">Inquire for Availability</button>
                     </article>
 
-                    <!-- Main Offer -->
                     <article class="pricing-card featured p-10 flex flex-col justify-between relative md:scale-105 shadow-2xl">
                         <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#8B6E37] text-white px-4 py-1 text-[10px] font-bold uppercase tracking-widest">Primary Choice</div>
                         <div>
@@ -223,7 +202,6 @@
                         <button onclick="handlePurchase()" class="btn-primary w-full" aria-label="Buy the Hybrid Spanish System now for 100 dollars">Buy Now</button>
                     </article>
 
-                    <!-- Downgrade -->
                     <article class="pricing-card p-10 flex flex-col justify-between opacity-90">
                         <div>
                             <h3 class="serif text-2xl mb-2">App Only</h3>
@@ -242,7 +220,6 @@
             </div>
         </section>
 
-        <!-- Testimonials -->
         <section class="max-w-4xl mx-auto border-t border-neutral-200">
             <div class="text-center">
                 <span class="type-tag">Observations</span>
@@ -263,7 +240,6 @@
         </section>
     </main>
 
-    <!-- Footer -->
     <footer class="bg-zinc-900 text-white py-20 px-8">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-12">
             <div>
